@@ -56,13 +56,25 @@ sub getArr() {
 
 
 #11.7
-sub Exercise_11_7 {
-	@arr1 = qw / apple banana cat /;
-	@arr2 = qw / banana dog cat pig /;
-	@arr = (@arr1 ~~ @arr2);
-	print @arr;
-}
+# sub Exercise_11_7 {
+# 	@arr1 = qw / apple banana cat /;
+# 	@arr2 = qw / banana dog cat pig /;
+# 	@arr = (@arr1 ~~ @arr2);
+# 	print @arr;
+# }
 
+
+sub Exercise_11_7 {
+	my @arr1 = qw/ apple banana cat /;
+ 	my @arr2 = qw/ banana dog cat pig /;
+ 	my %dt = ();
+ 	map { $dt{$_}=1 } @arr1;
+ 	foreach $wd (@arr2) {
+ 		if (exists $dt{$wd}) {
+ 			print $wd . "\n";
+ 		}
+ 	}
+}
 
 
 #&Exercise_11_1();
